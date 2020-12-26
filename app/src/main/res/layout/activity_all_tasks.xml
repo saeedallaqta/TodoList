@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:paddingTop="90dp"
+    android:orientation="vertical"
+    android:background="@color/main_color"
+    android:gravity="center_horizontal">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Personal list"
+        android:textColor="@color/white"
+        android:textSize="32sp"
+        android:layout_marginBottom="40dp"
+        />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColorHint="@color/white"
+        android:drawableLeft="@drawable/ic_baseline_add_24"
+        android:text="Create new list here"
+        android:backgroundTint="@color/gray"
+        android:textAlignment="viewStart"
+        android:padding="9dp"
+        android:layout_marginBottom="40dp"
+        />
+
+
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape2"
+        android:paddingVertical="8dp"
+        android:paddingHorizontal="13dp"
+        android:layout_marginBottom="34dp"
+        >
+
+        <CheckBox
+            android:id="@+id/checkbox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:text="\tMeeting with client"
+            android:layout_marginRight="15dp"
+            android:layout_marginEnd="15dp"
+            />
+
+    </LinearLayout>
+
+
+
+
+</LinearLayout>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:paddingTop="100dp"
+    android:paddingBottom="30dp"
+    android:orientation="vertical"
+    android:background="@color/main_color"
+    android:gravity="center_horizontal">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:text="Welcome Back!"
+        android:textSize="32sp"
+        android:textColor="@color/white"
+        android:layout_marginBottom="30dp"
+        />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Your Name"
+        android:textColorHint="@color/white"
+        android:background="@drawable/shape1"
+        android:paddingVertical="15dp"
+        android:paddingLeft="15dp"
+        android:layout_marginBottom="30dp"
+        />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Your email address"
+        android:textColorHint="@color/white"
+        android:background="@drawable/shape1"
+        android:paddingVertical="15dp"
+        android:paddingLeft="15dp"
+        android:layout_marginBottom="10dp"
+        />
+
+    <TextView
+        android:id="@+id/forgetPass"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="viewEnd"
+        android:text="Forget your password?"
+        android:textSize="19sp"
+        android:textColor="@color/white"
+        android:layout_marginBottom="139dp"
+        />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="64sp"
+        android:text="Login"
+        android:backgroundTint="@color/orange_button"
+        android:layout_marginBottom="30dp"
+        />
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Don't have an account?"
+        android:layout_marginBottom="10.6dp"
+        android:gravity="center_horizontal"
+        android:textSize="19sp"
+        android:textColor="@color/gray"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Create your profile"
+        android:textColor="@color/white"
+        android:gravity="center_horizontal"
+        android:textSize="19sp"
+        />
+</LinearLayout>
+
