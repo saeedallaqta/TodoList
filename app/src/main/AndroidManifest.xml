@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Todolist">
-        <activity android:name=".task_information"></activity>
+        <activity android:name=".PartSlice"></activity>
+        <activity android:name=".TaskSlice" />
+        <activity android:name=".task_information" />
         <activity android:name=".all_tasks" />
         <activity android:name=".tasks" />
         <activity android:name=".login" />

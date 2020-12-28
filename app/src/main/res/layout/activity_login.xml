@@ -23,9 +23,10 @@
         />
 
     <EditText
+        android:id="@+id/lemail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Your Name"
+        android:hint="email"
         android:textColorHint="@color/white"
         android:background="@drawable/shape1"
         android:paddingVertical="15dp"
@@ -34,9 +35,10 @@
         />
 
     <EditText
+        android:id="@+id/lpassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Your email address"
+        android:hint="password"
         android:textColorHint="@color/white"
         android:background="@drawable/shape1"
         android:paddingVertical="15dp"
@@ -61,6 +63,7 @@
         android:layout_weight="1"/>
 
     <Button
+        android:id="@+id/signin"
         android:layout_width="match_parent"
         android:layout_height="64sp"
         android:text="Login"
@@ -80,6 +83,7 @@
         />
 
     <TextView
+        android:id="@+id/gosignup"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Create your profile"

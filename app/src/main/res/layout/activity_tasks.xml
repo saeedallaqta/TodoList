@@ -12,16 +12,6 @@
         android:background="@color/main_color"
         android:gravity="center_horizontal">
 
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:drawableLeft="@drawable/ic_baseline_search_24"
-            android:hint="\tsearch"
-            android:textColorHint="@color/white"
-            android:background="@drawable/shape1"
-            android:padding="9dp"
-            android:layout_marginBottom="73dp"
-            />
 
         <TextView
             android:layout_width="match_parent"
@@ -33,47 +23,33 @@
             />
 
 
-        <Button
+        <EditText
+            android:id="@+id/part"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textColor="@color/white"
             android:textColorHint="@color/white"
-            android:text="Create new list here"
-            android:drawableLeft="@drawable/ic_baseline_add_24"
-            android:textAlignment="viewStart"
-            android:backgroundTint="@drawable/shape1"
-            android:padding="9dp"
-            android:layout_marginBottom="40dp"
+            android:background="@drawable/shape1"
+            android:hint="create part"
             />
 
-        <RelativeLayout
-            android:layout_width="match_parent"
+        <Button
+            android:id="@+id/addNewPart"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/shape2"
-            android:paddingVertical="16dp"
-            android:paddingHorizontal="22dp"
-            android:layout_gravity="center_vertical"
-            android:layout_marginBottom="34dp"
-            >
+            android:textColorHint="@color/white"
+            android:text="Create"
+            android:layout_gravity="start"
+            />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Home"
-                android:textColor="@color/black"
-                android:textSize="19sp"
-                />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="3 tasks"
-                android:textColor="@color/black"
-                android:textSize="19sp"
-                android:layout_alignParentRight="true"
 
-                />
-
-        </RelativeLayout>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/part_rv"
+            android:layout_marginTop="20dp"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
 
 
 

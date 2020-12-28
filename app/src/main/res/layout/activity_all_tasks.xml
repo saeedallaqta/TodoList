@@ -18,14 +18,34 @@
         android:textSize="32sp"
         android:layout_marginBottom="40dp"
         />
-
-    <Button
+    <EditText
+        android:id="@+id/taskTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textColor="@color/white"
         android:textColorHint="@color/white"
-        android:drawableLeft="@drawable/ic_baseline_add_24"
-        android:text="Create new list here"
-        android:backgroundTint="@color/gray"
+        android:background="@drawable/shape1"
+        android:hint="Task title"
+        android:layout_marginBottom="5dp"
+        />
+
+    <EditText
+        android:id="@+id/taskDesc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:background="@drawable/shape1"
+        android:hint="Task description"
+        android:layout_marginBottom="5dp"
+        />
+
+    <Button
+        android:id="@+id/addNewTask"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColorHint="@color/white"
+        android:text="Create"
         android:textAlignment="viewStart"
         android:padding="9dp"
         android:layout_marginBottom="40dp"
@@ -33,28 +53,12 @@
 
 
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/tasks_rv"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/shape2"
-        android:paddingVertical="8dp"
-        android:paddingHorizontal="13dp"
-        android:layout_marginBottom="34dp"
-        >
-
-        <CheckBox
-            android:id="@+id/checkbox"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true"
-            android:text="\tMeeting with client"
-            android:layout_marginRight="15dp"
-            android:layout_marginEnd="15dp"
-            />
-
-    </LinearLayout>
+        android:layout_height="match_parent" />
 
 
 
