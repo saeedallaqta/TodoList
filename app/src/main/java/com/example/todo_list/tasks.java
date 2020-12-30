@@ -23,9 +23,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class tasks extends AppCompatActivity implements PartAdapter.ListItemClickListener{
-    static List<Part> categoriesList = new ArrayList<>();
+    static List<Part> partList = new ArrayList<>();
     private FirebaseAuth mAuth;
-    RecyclerView parent_task_rv;
+    RecyclerView part_rv;
     PartAdapter partAdapter;
     Button addNewPart;
     EditText part;
@@ -49,10 +49,10 @@ public class tasks extends AppCompatActivity implements PartAdapter.ListItemClic
                 Part newPart = new Part();
                 newPart.setTitle(part.getText().toString());
                 newPart.setCount(0);
-                String categoryId = FirebaseDatabase.getInstance().getReference("Users").child(uid).child("part").push().getKey();
-                newPart.setId(categoryId);
-                FirebaseDatabase.getInstance().getReference("Users").child(uid).child("part").child(categoryId).setValue(newPart);
-                Toast.makeText(tasks.this,"Category has been added successfully", Toast.LENGTH_SHORT).show();
+                String partId = FirebaseDatabase.getInstance().getReference("Users").child(uid).child("part").push().getKey();
+                newPart.setId(partId);
+                FirebaseDatabase.getInstance().getReference("Users").child(uid).child("part").child(partId).setValue(newPart);
+                Toast.makeText(tasks.this,"added successfully", Toast.LENGTH_SHORT).show();
                 part.setText("");
             }
         });
@@ -64,10 +64,10 @@ public class tasks extends AppCompatActivity implements PartAdapter.ListItemClic
                 .addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                        categoriesList.clear();
+                        partList.clear();
                         for(DataSnapshot snapshot: dataSnapshot.getChildren() ){
                             Part item =  snapshot.getValue(Part.class);
-                            categoriesList.add(item);
+                            partList.add(item);
                         }
                         partAdapter.notifyDataSetChanged();
                     }
@@ -75,16 +75,17 @@ public class tasks extends AppCompatActivity implements PartAdapter.ListItemClic
                     public void onCancelled(@NonNull DatabaseError databaseError) {
                     }
                 });
-        parent_task_rv = findViewById(R.id.part_rv);
-        parent_task_rv.setLayoutManager(new LinearLayoutManager(this));
-        partAdapter = new PartAdapter(categoriesList, this);
-        parent_task_rv.setAdapter(partAdapter);
+        part_rv = findViewById(R.id.part_rv);
+        part_rv.setLayoutManager(new LinearLayoutManager(this));
+        partAdapter = new PartAdapter(partList, this);
+        part_rv.setAdapter(partAdapter);
     }
 
     @Override
     public void onListItemClick(int position) {
         Intent intent = new Intent(tasks.this, all_tasks.class);
-        intent.putExtra("CATEGORY_ID", categoriesList.get(position).getId());
+        intent.putExtra("part_id", partList.get(position).getId());
+        intent.putExtra("part_title", partList.get(position).getTitle());
         startActivity(intent);
     }
 }

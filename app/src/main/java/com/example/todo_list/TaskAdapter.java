@@ -12,16 +12,23 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.FirebaseDatabase;
+
 import java.util.List;
 
 public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.TaskVh>{
+    private FirebaseAuth mAuth;
     Context context;
+    String partId;
     List<Task> tasks;
     ListItemClickListener mListItemClickListener;
 
-    public TaskAdapter(Context context, List<Task> tasks, ListItemClickListener listItemClickListener) {
+    public TaskAdapter(Context context, List<Task> tasks, String partId, ListItemClickListener listItemClickListener) {
         this.context = context;
         this.tasks = tasks;
+        this.partId = partId;
         this.mListItemClickListener = listItemClickListener;
     }
     @Override
@@ -72,6 +79,20 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.TaskVh>{
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 taskEntity.setIsChecked(isChecked);
                 holder.checkBox.setSelected(isChecked);
+
+
+                mAuth = FirebaseAuth.getInstance();
+                FirebaseUser user = mAuth.getCurrentUser();
+                String uid = user.getUid();
+
+
+                Task task = new Task();
+                task.setTitle(taskEntity.getTitle());
+                task.setIsChecked(isChecked);
+                task.setId(taskEntity.id);
+                FirebaseDatabase.getInstance().getReference("Users").child(uid).child("part").child(partId).child("tasks").child(taskEntity.getId()).setValue(task);
+
+
                 if(isChecked){
                     holder.checkBox.setText(taskEntity.getTitle());
                     holder.checkBox.setPaintFlags( holder.checkBox.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);

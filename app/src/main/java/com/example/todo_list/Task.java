@@ -7,7 +7,7 @@ public class Task {
     public Task() {
     }
 
-    public TaskItem(String id, String title, String Description, Boolean isChecked) {
+    public Task(String id, String title, String Description, Boolean isChecked) {
         this.id = id;
         this.title = title;
         this.Description = Description;

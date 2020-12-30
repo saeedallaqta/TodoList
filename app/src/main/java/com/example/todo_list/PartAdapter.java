@@ -43,7 +43,7 @@ public class PartAdapter extends RecyclerView.Adapter<PartAdapter.ViewHolder>{
     }
 
 
-    public PartAdapter(List<Part> categories, ListItemClickListener listItemClickListener) {
+    public PartAdapter(List<Part> parts, ListItemClickListener listItemClickListener) {
         this.parts = parts;
         this.mListItemClickListener = listItemClickListener;
     }

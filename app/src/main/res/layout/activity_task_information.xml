@@ -24,6 +24,7 @@
             android:layout_marginBottom="26dp"
             >
             <TextView
+                android:id="@+id/ititle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Meet Joseph"
@@ -33,6 +34,7 @@
                 />
 
             <TextView
+                android:id="@+id/ipart"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="12sp"
@@ -46,14 +48,7 @@
 
         </LinearLayout>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="01 OCTOBER 2018, 10:00"
-            android:textColor="@color/gray"
-            android:textSize="16sp"
-            android:paddingBottom="40dp"
-            />
+
 
         <View
             android:layout_width="match_parent"
@@ -73,30 +68,22 @@
             />
 
         <TextView
+            android:id="@+id/idescription"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Have to meet him because I want to show him my latest app design in person."
             android:textColor="#5A5760"
             android:paddingRight="50dp"
             android:textSize="18sp"
             android:layout_marginBottom="13dp"
             />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Have to meet him because I want to show him my latest app design in person."
-            android:textColor="#5A5760"
-            android:paddingRight="50dp"
-            android:textSize="18sp"
-            android:layout_marginBottom="13dp"
-            />
 
         <TextView
+            android:id="@+id/delete"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Delete"
-            android:textColor="#e74c3c"
+            android:textColor="#f00"
             android:paddingRight="50dp"
             android:textSize="18sp"
             />

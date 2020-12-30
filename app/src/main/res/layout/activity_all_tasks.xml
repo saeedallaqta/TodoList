@@ -11,11 +11,22 @@
     android:gravity="center_horizontal">
 
     <TextView
+        android:id="@+id/tpartTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Personal list"
+        android:text="list"
         android:textColor="@color/white"
         android:textSize="32sp"
+        android:layout_marginBottom="5dp"
+        />
+
+    <TextView
+        android:id="@+id/deletePart"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Delete"
+        android:textColor="#f00"
+        android:textSize="15sp"
         android:layout_marginBottom="40dp"
         />
     <EditText
