@@ -88,6 +88,7 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.TaskVh>{
 
                 Task task = new Task();
                 task.setTitle(taskEntity.getTitle());
+                task.setDescription(taskEntity.getDescription());
                 task.setIsChecked(isChecked);
                 task.setId(taskEntity.id);
                 FirebaseDatabase.getInstance().getReference("Users").child(uid).child("part").child(partId).child("tasks").child(taskEntity.getId()).setValue(task);
